@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Candle - Aromaterapi Alami untuk Relaksasi Mewah di Rumah</title>
+    <title>Sweet Candle - V2 Design Preview - Aromaterapi Alami</title>
     <meta name="description" content="Temukan kedamaian dengan Sweet Candle, lilin aromaterapi 100% alami dari soy wax dan pure essential oils. Wangi mewah tahan lama untuk relaksasi sempurna di rumah.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="[YOUR_LANDING_PAGE_URL_HERE]">
+    <meta property="og:url" content="https://ervankurniawan41.netlify.app/landingpage/sweet-candle-id.html">
     <meta property="og:title" content="Sweet Candle - Aromaterapi Alami untuk Relaksasi Mewah">
     <meta property="og:description" content="Lilin 100% alami, wangi tahan lama, ciptakan oase ketenangan di rumah Anda.">
     <meta property="og:image" content="[URL_TO_YOUR_BEST_PRODUCT_IMAGE_HERE_e.g.,_sweet_candle_hero.jpg]">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="[YOUR_LANDING_PAGE_URL_HERE]">
+    <meta property="twitter:url" content="https://ervankurniawan41.netlify.app/landingpage/sweet-candle-id.html">
     <meta property="twitter:title" content="Sweet Candle - Aromaterapi Alami untuk Relaksasi Mewah">
     <meta property="twitter:description" content="Lilin 100% alami, wangi tahan lama, ciptakan oase ketenangan di rumah Anda.">
     <meta property="twitter:image" content="[URL_TO_YOUR_BEST_PRODUCT_IMAGE_HERE_e.g.,_sweet_candle_hero.jpg]">
@@ -25,23 +25,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --font-primary: 'Playfair Display', serif;
-            --font-secondary: 'Montserrat', sans-serif;
+            /* NEW THEME V2 VARIABLES */
+            --font-primary: 'DM Serif Display', serif; /* Headings */
+            --font-secondary: 'Inter', sans-serif;    /* Body text */
             
-            --color-text-dark: #4a3b31; /* Darker for better contrast */
-            --color-text-light: #f9f7f3;
-            --color-primary: #7a5c58;
-            --color-primary-darker: #5c4b3c;
-            --color-accent: #a0856f;
-            --color-accent-hover: #8a705A;
-            --color-background-light: #f9f7f3;
-            --color-background-medium: #ede7dd;
-            --color-background-card: #fff;
-            --color-border: #d3c1ae;
+            --color-text-dark: #333D45;          /* Cooler dark grey for text */
+            --color-text-medium: #5A6872;         /* Medium grey for less emphasis text */
+            --color-text-light: #FFFFFF;
+            
+            --color-primary: #5D737E;            /* Muted blue-grey for primary elements/headings */
+            --color-primary-darker: #455A64;     /* Darker shade for footer etc. */
+            
+            --color-accent: #E58A5C;             /* Warm peach/orange accent */
+            --color-accent-hover: #D6784A;       /* Darker accent for hover */
+            
+            --color-background-light: #F8F9FA;   /* Very light grey, almost white for body */
+            --color-background-medium: #E9ECEF;  /* Slightly darker grey for section backgrounds */
+            --color-background-card: #FFFFFF;     /* White for cards */
+            
+            --color-border: #DDE2E6;             /* Light border for cards/dividers */
+            --color-testimonial-bg: var(--color-background-card); /* Testimonials on card background */
 
             --transition-speed: 0.3s;
         }
@@ -57,146 +64,184 @@
             padding: 0;
             color: var(--color-text-dark);
             background-color: var(--color-background-light);
-            font-size: 16px; /* Base font size */
+            font-size: 16px; 
+            font-weight: 400; /* Default weight for Inter */
         }
 
         .container {
             width: 90%;
-            max-width: 980px; /* Slightly wider for more space */
+            max-width: 1024px; /* Slightly wider for a more modern feel */
             margin: auto;
-            overflow: hidden; /* Keep for now, but be mindful if using sticky elements */
+            overflow: hidden; 
             padding: 20px 0;
         }
 
         /* --- Header & Hero --- */
         header.hero {
             background-color: var(--color-background-medium);
-            color: var(--color-text-dark); /* Improved contrast */
-            padding: 60px 20px 80px; /* More padding */
+            color: var(--color-text-dark); 
+            padding: 70px 20px 90px; 
             text-align: center;
-            border-bottom: 4px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border); /* Lighter border */
         }
         header.hero h1 {
             font-family: var(--font-primary);
-            font-size: clamp(2.5em, 5vw, 3.5em); /* Responsive font size */
-            margin-bottom: 20px;
+            font-size: clamp(2.8em, 5.5vw, 4em); 
+            margin-bottom: 25px;
             color: var(--color-primary);
             line-height: 1.2;
         }
         header.hero p {
-            font-size: clamp(1em, 2.5vw, 1.25em);
-            margin-bottom: 40px;
-            max-width: 700px;
+            font-size: clamp(1.05em, 2.5vw, 1.3em);
+            margin-bottom: 45px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
+            color: var(--color-text-medium);
+            font-weight: 400;
         }
         .cta-button {
             display: inline-block;
             background-color: var(--color-accent);
-            color: var(--color-text-light) !important; /* Ensure text is light */
-            padding: 18px 35px;
+            color: var(--color-text-light) !important; 
+            padding: 18px 40px; /* Slightly more padding */
             text-decoration: none;
-            border-radius: 8px;
-            font-size: clamp(1em, 2.5vw, 1.15em);
-            font-weight: 600; /* Use font weight from Montserrat */
-            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px; /* Consistent radius */
+            font-size: clamp(1.05em, 2.5vw, 1.2em);
+            font-weight: 600; /* Inter semibold */
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .cta-button:hover, .cta-button:focus {
             background-color: var(--color-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         /* --- Sections --- */
         section {
-            padding: 60px 20px; /* Increased padding */
+            padding: 70px 20px; 
             text-align: center;
+        }
+        section:nth-of-type(odd):not(.offer-section) { /* Alternate light background for non-card sections */
+           /* background-color: var(--color-background-light); */
+        }
+        section:nth-of-type(even):not(.offer-section) {
+           /* background-color: var(--color-background-card); */ /* White sections for card content */
         }
         section h2 {
             font-family: var(--font-primary);
-            font-size: clamp(2em, 4vw, 2.8em);
-            margin-bottom: 40px; /* Increased margin */
+            font-size: clamp(2.2em, 4.5vw, 3.2em);
+            margin-bottom: 50px; 
             color: var(--color-primary);
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
-        /* Problem & Benefits Lists */
+        /* Problem & Benefits Lists - REDESIGNED V2 */
         .problem-list, .benefits-list {
             list-style: none;
             padding: 0;
             text-align: left;
-            max-width: 700px; /* Increased max-width */
-            margin: 0 auto 40px auto;
-            display: grid; /* For better alignment and future column possibilities */
-            gap: 15px;
+            max-width: 750px; 
+            margin: 0 auto 50px auto;
+            display: grid; 
+            gap: 25px; 
         }
         .problem-list li, .benefits-list li {
             background-color: var(--color-background-card);
-            padding: 20px 25px; /* More padding */
-            margin-bottom: 0; /* Handled by grid gap */
-            border-radius: 8px; /* Softer radius */
-            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--color-accent); /* Accent border */
+            padding: 25px 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 20px rgba(var(--color-primary-rgb, 70, 90, 100), 0.08); /* Soft shadow with primary tint */
             transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            display: flex; 
+            align-items: flex-start; 
         }
         .problem-list li:hover, .benefits-list li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(var(--color-primary-rgb, 70, 90, 100), 0.12);
         }
         .benefits-list li strong {
-            color: var(--color-primary-darker); /* Darker for emphasis */
-            font-weight: 600;
+            color: var(--color-text-dark); 
+            font-weight: 600; /* Inter semibold */
+            display: block; /* Make strong a block for spacing if needed */
+            margin-bottom: 5px;
         }
-        .benefits-list li .icon-placeholder { /* For Unicode icons or future SVGs */
-            margin-right: 10px;
-            font-size: 1.2em;
-            color: var(--color-accent);
+        .problem-list li .icon-placeholder, /* Using emojis as placeholders */
+        .benefits-list li .icon-placeholder {
+            margin-right: 18px;
+            font-size: 1.6em; 
+            color: var(--color-accent); 
+            flex-shrink: 0; 
+            padding-top: 3px; /* Align with first line of text */
+        }
+        .problem-list li div, .benefits-list li div { /* Text content wrapper */
+            flex-grow: 1;
+            color: var(--color-text-medium);
+        }
+        .benefits-list li div {
+            color: var(--color-text-medium);
         }
 
+
         /* Solution Section */
+        .solution-section {
+            background-color: var(--color-background-medium); /* Distinct background */
+        }
         .solution-section p {
-            max-width: 750px; /* Increased readability */
+            max-width: 780px; 
             margin: 0 auto 30px auto;
-            font-size: 1.1em;
+            font-size: 1.15em;
+            color: var(--color-text-medium);
         }
         
-        /* Social Proof Section */
+        /* Social Proof Section - TESTIMONIAL REDESIGNED V2 */
+        .social-proof {
+            /* background-color: var(--color-background-light); */ /* Default section bg */
+        }
         .social-proof .testimonial {
-            background-color: #faf6f0; /* Keeping unique bg for testimonials */
-            border-left: 5px solid var(--color-accent);
-            padding: 25px;
-            margin: 25px auto;
-            max-width: 650px;
-            text-align: left;
-            font-style: italic;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            background-color: var(--color-testimonial-bg);
+            padding: 35px; /* Generous padding */
+            margin: 30px auto; 
+            max-width: 700px;
+            border-radius: 12px; /* Slightly more rounded */
+            box-shadow: 0 6px 22px rgba(var(--color-primary-rgb, 70, 90, 100), 0.09);
+            /* border: 1px solid var(--color-border); */ /* Optional border */
+            text-align: left; 
+            position: relative;
         }
-        .social-proof .testimonial p {
-            margin-bottom: 10px;
-            font-size: 1.05em;
+        .social-proof .testimonial p { /* The quote */
+            margin-bottom: 25px;
+            font-size: 1.1em; /* Inter regular, slightly larger */
+            line-height: 1.65;
+            color: var(--color-text-medium);
+            font-style: italic; 
         }
-        .social-proof .testimonial span {
+        .social-proof .testimonial span { /* Author */
             display: block;
             font-style: normal;
-            font-weight: 600;
+            font-weight: 600; /* Inter Semibold */
             text-align: right;
-            color: var(--color-primary);
-            font-size: 0.95em;
+            color: var(--color-text-dark); 
+            font-size: 1em;
         }
+        .social-proof .testimonial span::before {
+            content: "— ";
+            color: var(--color-text-medium);
+        }
+
         .social-proof .stats {
-            margin-top: 40px;
+            margin-top: 50px;
         }
         .social-proof .stats p {
-            font-size: 1.15em;
-            margin-bottom: 10px;
-            color: var(--color-text-dark);
-            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--color-text-medium);
+            font-weight: 500; /* Inter medium */
         }
         .social-proof .stats p .icon-placeholder {
-            margin-right: 8px;
+            margin-right: 10px;
             color: var(--color-accent);
+            font-size: 1.1em;
         }
 
         /* Offer Section */
@@ -204,18 +249,20 @@
             background-color: var(--color-background-medium);
         }
         .offer-section p {
-             max-width: 700px;
-             margin: 0 auto 30px auto;
-             font-size: 1.1em;
+             max-width: 720px;
+             margin: 0 auto 35px auto;
+             font-size: 1.15em;
+             color: var(--color-text-medium);
         }
         .secondary-links {
-            margin-top: 30px;
+            margin-top: 35px;
             font-size: 1em;
+            color: var(--color-text-medium);
         }
         .secondary-links a {
-            margin: 0 10px;
+            margin: 0 12px;
             color: var(--color-accent);
-            font-weight: 600;
+            font-weight: 600; /* Inter semibold */
             text-decoration: none;
             transition: color var(--transition-speed) ease;
         }
@@ -226,107 +273,197 @@
 
         /* FAQ Section */
         .faq-item {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             text-align: left;
-            max-width: 750px; /* Wider for FAQ content */
+            max-width: 800px; 
             margin-left: auto;
             margin-right: auto;
-            border-radius: 8px;
-            overflow: hidden; /* To contain children with border-radius */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+            border-radius: 10px;
+            overflow: hidden; 
+            background-color: var(--color-background-card);
+            box-shadow: 0 4px 15px rgba(var(--color-primary-rgb, 70, 90, 100), 0.06);
         }
         .faq-item h3 {
-            background-color: #e0d8cf; /* Keeping distinct FAQ header bg */
-            padding: 15px 20px; /* More padding */
+            background-color: transparent; /* Cleaner look */
+            /* border-bottom: 1px solid var(--color-border); */ /* Optional separator */
+            padding: 18px 25px; 
             margin: 0;
             cursor: pointer;
-            color: var(--color-primary-darker);
-            font-size: 1.1em;
-            font-weight: 600;
+            color: var(--color-text-dark);
+            font-size: 1.15em; /* Inter medium/semibold */
+            font-weight: 500;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color var(--transition-speed) ease;
+            transition: color var(--transition-speed) ease;
         }
         .faq-item h3:hover {
-            background-color: #d3c1ae;
+            color: var(--color-primary);
         }
-        .faq-item h3::after { /* Toggle icon */
+        .faq-item h3::after { 
             content: '+';
-            font-size: 1.5em;
-            font-weight: normal; /* Lighter than text for visual balance */
+            font-size: 1.6em;
+            font-weight: 400; /* Lighter for icon */
             color: var(--color-accent);
-            transition: transform var(--transition-speed) ease;
+            transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
         }
         .faq-item h3[aria-expanded="true"]::after {
             transform: rotate(45deg);
+            color: var(--color-accent-hover);
         }
-        .faq-item .faq-answer { /* Class for answer panel */
-            background-color: #f7f2ec; /* Lighter than header */
-            padding: 20px;
+        .faq-item .faq-answer { 
+            background-color: var(--color-background-card); 
+            padding: 0 25px 20px 25px; /* Adjust padding */
             margin: 0;
-            border-top: 1px solid #e0d8cf;
+            color: var(--color-text-medium);
+            border-top: 1px solid var(--color-border);
         }
+        .faq-item .faq-answer p {
+            margin-top: 15px;
+        }
+
 
         /* Footer */
         footer {
             background-color: var(--color-primary-darker);
             color: var(--color-text-light);
             text-align: center;
-            padding: 30px 20px; /* More padding */
-            font-size: 0.9em;
+            padding: 40px 20px; 
+            font-size: 0.95em;
+            font-weight: 400;
         }
         footer p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            opacity: 0.9;
         }
         .footer-social-links a {
             color: var(--color-text-light);
-            margin: 0 10px;
+            margin: 0 12px;
             text-decoration: none;
-            font-size: 1.5em; /* For icon fonts if used */
-            transition: color var(--transition-speed) ease;
+            font-size: 1em; 
+            opacity: 0.8;
+            transition: opacity var(--transition-speed) ease;
         }
         .footer-social-links a:hover {
-            color: var(--color-accent);
+            opacity: 1;
         }
 
-        /* Image Placeholders - Replace with actual images */
+        /* Image Placeholders */
         .image-placeholder {
             width: 100%;
-            min-height: 300px; /* Use min-height */
-            background-color: #e0e0e0; /* Lighter placeholder */
+            min-height: 350px; 
+            background-color: var(--color-background-medium); 
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777; /* Darker placeholder text */
+            color: var(--color-text-medium); 
             font-style: italic;
-            font-size: 0.9em;
-            margin-bottom: 30px; /* More space */
-            border-radius: 8px;
-            border: 2px dashed #ccc; /* Dashed border */
+            font-size: 1em;
+            margin-bottom: 35px; 
+            border-radius: 12px; /* More rounded */
+            border: 2px dashed var(--color-border); 
             padding: 20px;
             box-sizing: border-box;
         }
 
+        /* Floating Author Button Styles */
+        .author-credit-wrapper {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+        }
+        .author-credit-tab {
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
+            padding: 16px 10px; /* Taller tab */
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            font-weight: 700; /* Inter bold */
+            font-size: 0.9em;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: translateX(0);
+            transition: background-color 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .author-credit-wrapper:hover .author-credit-tab,
+        .author-credit-wrapper.force-show .author-credit-tab {
+            background-color: var(--color-accent-hover);
+        }
+        .author-credit {
+            background-color: var(--color-primary-darker);
+            color: var(--color-text-light);
+            padding: 12px 20px 12px 15px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+            font-size: 0.9em;
+            font-weight: 500; /* Inter medium */
+            white-space: nowrap;
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            display: flex;
+            align-items: center;
+        }
+        .author-credit-wrapper:hover .author-credit,
+        .author-credit-wrapper.force-show .author-credit {
+            transform: translateX(0);
+        }
+        .author-credit a {
+            color: inherit;
+            text-decoration: none;
+            margin-right: 10px; /* Space before dismiss button */
+        }
+        .author-credit a:hover {
+            text-decoration: underline;
+        }
+        .author-credit-dismiss {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 1.7em;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.3s ease;
+        }
+        .author-credit-dismiss:hover {
+            color: rgba(255,255,255,1);
+        }
+
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            header.hero { padding: 40px 20px 60px; }
-            header.hero p { font-size: 1.1em; }
-            .cta-button { padding: 15px 25px; }
-            section { padding: 40px 15px; }
-            section h2 { margin-bottom: 30px; }
-            .problem-list, .benefits-list { max-width: 100%; } /* Full width on mobile */
+            header.hero { padding: 50px 20px 70px; }
+            header.hero p { font-size: 1.15em; }
+            .cta-button { padding: 16px 30px; }
+            section { padding: 50px 15px; }
+            section h2 { margin-bottom: 35px; font-size: clamp(2em, 4vw, 2.8em); }
+            .problem-list, .benefits-list { max-width: 100%; gap: 20px; }
             .benefits-list {
-                /* On smaller screens, ensure benefits stack nicely */
                 grid-template-columns: 1fr; 
             }
+             .author-credit-tab { padding: 14px 8px; font-size: 0.85em;}
+             .author-credit { font-size: 0.85em; padding: 10px 15px 10px 12px; }
         }
         @media (max-width: 480px) {
-            body { font-size: 15px; } /* Slightly smaller base for very small screens */
-            header.hero h1 { margin-bottom: 15px; }
-            header.hero p { font-size: 1em; margin-bottom: 30px;}
-            .cta-button { width: 90%; box-sizing: border-box; } /* Full width CTA on mobile */
-            .secondary-links a { display: block; margin: 10px 0; } /* Stack marketplace links */
+            body { font-size: 15px; } 
+            header.hero h1 { margin-bottom: 20px; font-size: clamp(2.2em, 5vw, 2.8em); }
+            header.hero p { font-size: 1.05em; margin-bottom: 35px;}
+            .cta-button { width: 90%; box-sizing: border-box; } 
+            .secondary-links a { display: block; margin: 12px 0; } 
+            .problem-list li .icon-placeholder,
+            .benefits-list li .icon-placeholder { font-size: 1.4em; margin-right: 12px;}
+            .problem-list li, .benefits-list li { padding: 20px 20px;}
+            .social-proof .testimonial { padding: 25px; }
+            .faq-item h3 { padding: 15px 20px; font-size: 1.1em;}
+            .faq-item .faq-answer { padding: 0 20px 15px 20px;}
         }
 
     </style>
@@ -351,16 +488,16 @@
             <div class="container">
                 <h2>Merasa Penat dan Sulit Rileks di Rumah Sendiri? Anda Tidak Sendirian.</h2>
                 <ul class="problem-list">
-                    <li><span class="icon-placeholder">😟</span> Rutinitas padat seringkali meninggalkan rasa stres dan kelelahan yang sulit hilang.</li>
-                    <li><span class="icon-placeholder">❓</span> Ingin suasana rumah yang lebih tenang dan nyaman, tapi bingung cara menciptakannya tanpa ribet?</li>
-                    <li><span class="icon-placeholder">💔</span> Pernah kecewa dengan lilin aromaterapi mahal yang wanginya cepat pudar atau malah bikin pusing?</li>
-                    <li><span class="icon-placeholder">🔬</span> Khawatir dengan kandungan parafin dan zat kimia berbahaya dalam lilin yang Anda gunakan?</li>
+                    <li><span class="icon-placeholder">😟</span><div>Rutinitas padat seringkali meninggalkan rasa stres dan kelelahan yang sulit hilang.</div></li>
+                    <li><span class="icon-placeholder">❓</span><div>Ingin suasana rumah yang lebih tenang dan nyaman, tapi bingung cara menciptakannya tanpa ribet?</div></li>
+                    <li><span class="icon-placeholder">💔</span><div>Pernah kecewa dengan lilin aromaterapi mahal yang wanginya cepat pudar atau malah bikin pusing?</div></li>
+                    <li><span class="icon-placeholder">🔬</span><div>Khawatir dengan kandungan parafin dan zat kimia berbahaya dalam lilin yang Anda gunakan?</div></li>
                 </ul>
             </div>
         </section>
 
         <!-- 3. Solution Section -->
-        <section class="solution-section" style="background-color: #f7f2ec;"> <!-- Lighter distinct bg -->
+        <section class="solution-section">
             <div class="container">
                 <div class="image-placeholder" role="img" aria-label="Detail produk Sweet Candle menampilkan bahan alami seperti soy wax dan essential oil">
                     [Gambar Detail: Close-up lilin Sweet Candle atau komposisi bahan alami yang digunakan]
@@ -375,18 +512,18 @@
             <div class="container">
                 <h2>Mengapa Sweet Candle Akan Menjadi Favorit Baru Anda?</h2>
                 <ul class="benefits-list">
-                    <li><span class="icon-placeholder">🌿</span> <strong>100% Alami & Aman:</strong> Dibuat dari <em>soy wax</em> murni dan <em>pure essential oils</em>, bebas parafin dan ftalat. Aman untuk Anda, keluarga, dan lingkungan.</li>
-                    <li><span class="icon-placeholder">✨</span> <strong>Aroma Eksklusif Tahan Lama:</strong> Pilihan seperti <em>Lavender Woods</em>, <em>Vanilla Bergamot</em>, <em>Citrus Bloom</em>. Wanginya konsisten mengisi ruangan tanpa berlebihan.</li>
-                    <li><span class="icon-placeholder">🏡</span> <strong>Ciptakan Suasana Idaman:</strong> Ubah mood ruangan menjadi lebih rileks untuk istirahat, romantis untuk momen spesial, atau fokus untuk bekerja.</li>
-                    <li><span class="icon-placeholder">♻️</span> <strong>Wadah Estetik & Reusable:</strong> Desain minimalis elegan dari kaca tebal yang cantik. Setelah lilin habis, wadah bisa digunakan kembali untuk pernak-pernik atau tanaman kecil.</li>
-                    <li><span class="icon-placeholder">🎁</span> <strong>Hadiah Sempurna & Personal:</strong> Kemasan premium yang menawan. Tersedia opsi <em>custom label</em> atau kartu ucapan untuk hadiah yang lebih berkesan.</li>
-                    <li><span class="icon-placeholder">🇮🇩</span> <strong>Dukung Produk Lokal Berkualitas:</strong> Bangga menjadi bagian dari brand lokal yang mengedepankan kualitas dan bahan-bahan terbaik dari alam Indonesia.</li>
+                    <li><span class="icon-placeholder">🌿</span><div><strong>100% Alami & Aman:</strong> Dibuat dari <em>soy wax</em> murni dan <em>pure essential oils</em>, bebas parafin dan ftalat. Aman untuk Anda, keluarga, dan lingkungan.</div></li>
+                    <li><span class="icon-placeholder">✨</span><div><strong>Aroma Eksklusif Tahan Lama:</strong> Pilihan seperti <em>Lavender Woods</em>, <em>Vanilla Bergamot</em>, <em>Citrus Bloom</em>. Wanginya konsisten mengisi ruangan tanpa berlebihan.</div></li>
+                    <li><span class="icon-placeholder">🏡</span><div><strong>Ciptakan Suasana Idaman:</strong> Ubah mood ruangan menjadi lebih rileks untuk istirahat, romantis untuk momen spesial, atau fokus untuk bekerja.</div></li>
+                    <li><span class="icon-placeholder">♻️</span><div><strong>Wadah Estetik & Reusable:</strong> Desain minimalis elegan dari kaca tebal yang cantik. Setelah lilin habis, wadah bisa digunakan kembali untuk pernak-pernik atau tanaman kecil.</div></li>
+                    <li><span class="icon-placeholder">🎁</span><div><strong>Hadiah Sempurna & Personal:</strong> Kemasan premium yang menawan. Tersedia opsi <em>custom label</em> atau kartu ucapan untuk hadiah yang lebih berkesan.</div></li>
+                    <li><span class="icon-placeholder">🇮🇩</span><div><strong>Dukung Produk Lokal Berkualitas:</strong> Bangga menjadi bagian dari brand lokal yang mengedepankan kualitas dan bahan-bahan terbaik dari alam Indonesia.</div></li>
                 </ul>
             </div>
         </section>
 
         <!-- 5. Social Proof Section -->
-        <section class="social-proof" style="background-color: #f7f2ec;"> <!-- Consistent with solution bg -->
+        <section class="social-proof">
             <div class="container">
                 <h2>Lebih dari 20.000+ Momen Ketenangan Telah Tercipta Bersama Sweet Candle!</h2>
                 <div class="testimonial">
@@ -397,7 +534,6 @@
                     <p>"Suka banget sama aroma Lavender Woods-nya, beneran bikin tidur lebih nyenyak dan berkualitas. Packaging-nya juga cantik banget, estetik buat pajangan. Worth every penny!"</p>
                     <span>- Rina K., Bandung</span>
                 </div>
-                <!-- Add more testimonials or a slider if many -->
                 <div class="stats">
                     <p><span class="icon-placeholder">⭐</span> Terjual lebih dari 20.000 lilin sejak diluncurkan pada tahun 2020.</p>
                     <p><span class="icon-placeholder">💖</span> Dipercaya oleh ribuan pelanggan setia & direkomendasikan oleh influencer gaya hidup.</p>
@@ -460,14 +596,29 @@
         <div class="container">
             <p>© <span id="currentYear"></span> Sweet Candle. All Rights Reserved. Crafted with Love in Indonesia.</p>
             <div class="footer-social-links">
-                <!-- Replace # with actual social media links. Consider using SVG icons here for best quality. -->
-                <!-- Example: <a href="#" aria-label="Sweet Candle on Instagram"><i class="fab fa-instagram"></i></a> -->
                 <a href="https://instagram.com/SweetCandleID" target="_blank" aria-label="Sweet Candle di Instagram">Instagram</a> | 
                 <a href="[LINK_FACEBOOK_ANDA]" target="_blank" aria-label="Sweet Candle di Facebook">Facebook</a> |
                 <a href="[LINK_TIKTOK_ANDA]" target="_blank" aria-label="Sweet Candle di TikTok">TikTok</a>
             </div>
         </div>
     </footer>
+
+    <!-- Author Credit Floating Button -->
+    <div class="author-credit-wrapper" id="authorCreditWrapper">
+        <div class="author-credit-tab" 
+             onclick="this.parentElement.classList.toggle('force-show')" 
+             title="About the designer of this page preview">
+            EK
+        </div>
+        <div class="author-credit">
+            <a href="https://t.me/karvanidx" target="_blank" title="Contact Ervan Kurniawan on Telegram">
+                Designed by Ervan Kurniawan
+            </a>
+            <button class="author-credit-dismiss" 
+                    onclick="document.getElementById('authorCreditWrapper').style.display='none'" 
+                    title="Dismiss this notice">×</button>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -478,21 +629,19 @@
             const faqQuestions = document.querySelectorAll('.faq-item h3');
             faqQuestions.forEach(question => {
                 const answer = question.nextElementSibling;
-                // Ensure answer panel has an ID and is controlled by the question
-                if (!answer.id) {
-                    answer.id = question.id.replace('-q', '-a');
+                if (!answer.id) { // Ensure unique ID for ARIA
+                    answer.id = question.id.replace('-q', '-a') || `faq-answer-${Math.random().toString(36).substr(2, 9)}`;
                 }
                 question.setAttribute('aria-controls', answer.id);
 
                 question.addEventListener('click', () => {
                     const isExpanded = question.getAttribute('aria-expanded') === 'true';
-                    question.setAttribute('aria-expanded', !isExpanded);
+                    question.setAttribute('aria-expanded', String(!isExpanded));
                     answer.style.display = isExpanded ? 'none' : 'block';
-                    if (!isExpanded) {
-                        // Optional: scroll to opened FAQ if it's long
-                        // answer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }
                 });
+                 // Initially hide answers (can also be done with CSS if preferred)
+                answer.style.display = 'none';
+                question.setAttribute('aria-expanded', 'false');
             });
         });
     </script>
