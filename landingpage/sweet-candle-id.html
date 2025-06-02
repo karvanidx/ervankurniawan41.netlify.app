@@ -23,698 +23,325 @@
     <link rel="icon" href="[URL_TO_YOUR_FAVICON_HERE_e.g.,_favicon.ico]" type="image/x-icon">
     <link rel="apple-touch-icon" href="[URL_TO_YOUR_APPLE_TOUCH_ICON_HERE_e.g.,_apple-touch-icon.png]">
 
-    <!-- New Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Poppins', sans-serif;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Montserrat', sans-serif;
             
-            --color-primary: #4a7c59;         /* Nature-inspired green */
-            --color-primary-dark: #3a6147;    /* Darker green */
-            --color-accent: #d4a373;          /* Warm terracotta */
-            --color-accent-dark: #b38b5e;      /* Darker terracotta */
-            --color-light: #f8f4e9;           /* Soft cream */
-            --color-text: #333333;            /* Deep charcoal */
-            --color-text-light: #5c5c5c;      /* Lighter text */
-            --color-background: #f9f7f2;      /* Warm off-white */
-            --color-card: #ffffff;            /* Pure white */
-            --color-border: #e8e3d5;          /* Subtle border */
-            --color-highlight: #f2e9e1;       /* Highlight background */
+            --color-text-dark: #4a3b31; /* Darker for better contrast */
+            --color-text-light: #f9f7f3;
+            --color-primary: #7a5c58;
+            --color-primary-darker: #5c4b3c;
+            --color-accent: #a0856f;
+            --color-accent-hover: #8a705A;
+            --color-background-light: #f9f7f3;
+            --color-background-medium: #ede7dd;
+            --color-background-card: #fff;
+            --color-border: #d3c1ae;
 
             --transition-speed: 0.3s;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
-            --shadow-md: 0 6px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
         }
 
         body {
-            font-family: var(--font-body);
+            font-family: var(--font-secondary);
             line-height: 1.7;
-            color: var(--color-text);
-            background-color: var(--color-background);
-            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            color: var(--color-text-dark);
+            background-color: var(--color-background-light);
+            font-size: 16px; /* Base font size */
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 980px; /* Slightly wider for more space */
             margin: auto;
+            overflow: hidden; /* Keep for now, but be mindful if using sticky elements */
             padding: 20px 0;
         }
 
         /* --- Header & Hero --- */
         header.hero {
-            position: relative;
-            background: linear-gradient(135deg, rgba(248,244,233,0.9) 0%, rgba(248,244,233,0.95) 100%), 
-                        url('[HERO_BACKGROUND_IMAGE]') no-repeat center center/cover;
-            color: var(--color-text);
-            padding: 100px 20px;
+            background-color: var(--color-background-medium);
+            color: var(--color-text-dark); /* Improved contrast */
+            padding: 60px 20px 80px; /* More padding */
             text-align: center;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-bottom: 4px solid var(--color-border);
         }
-
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
         header.hero h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.8rem, 5.5vw, 4rem);
-            margin-bottom: 25px;
-            color: var(--color-primary-dark);
+            font-family: var(--font-primary);
+            font-size: clamp(2.5em, 5vw, 3.5em); /* Responsive font size */
+            margin-bottom: 20px;
+            color: var(--color-primary);
             line-height: 1.2;
-            letter-spacing: -0.5px;
-            font-weight: 700;
         }
-
         header.hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-size: clamp(1em, 2.5vw, 1.25em);
             margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            color: var(--color-text-light);
         }
-
         .cta-button {
             display: inline-block;
             background-color: var(--color-accent);
-            color: white !important;
-            padding: 18px 40px;
+            color: var(--color-text-light) !important; /* Ensure text is light */
+            padding: 18px 35px;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-            font-weight: 600;
-            transition: all var(--transition-speed) ease;
-            box-shadow: var(--shadow-md);
-            border: 2px solid var(--color-accent);
-            position: relative;
-            overflow: hidden;
+            border-radius: 8px;
+            font-size: clamp(1em, 2.5vw, 1.15em);
+            font-weight: 600; /* Use font weight from Montserrat */
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            transform: translateX(-100%);
-            transition: transform 0.4s ease;
-        }
-
         .cta-button:hover, .cta-button:focus {
-            background-color: var(--color-accent-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .cta-button:hover::after {
-            transform: translateX(0);
-        }
-
-        /* Floating Candle Animation */
-        .floating-candle {
-            position: absolute;
-            width: 120px;
-            height: 180px;
-            bottom: 10%;
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.9;
-            z-index: 1;
-        }
-
-        .floating-candle:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-candle:nth-child(2) {
-            right: 10%;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         /* --- Sections --- */
         section {
-            padding: 90px 20px;
-            position: relative;
-        }
-
-        .section-header {
+            padding: 60px 20px; /* Increased padding */
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
         }
-
         section h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4.5vw, 3rem);
-            margin-bottom: 20px;
-            color: var(--color-primary-dark);
+            font-family: var(--font-primary);
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 40px; /* Increased margin */
+            color: var(--color-primary);
             line-height: 1.3;
-            font-weight: 700;
-        }
-
-        section .subheading {
-            font-size: 1.2rem;
-            color: var(--color-text-light);
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         /* Problem & Benefits Lists */
         .problem-list, .benefits-list {
             list-style: none;
             padding: 0;
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            gap: 25px;
+            text-align: left;
+            max-width: 700px; /* Increased max-width */
+            margin: 0 auto 40px auto;
+            display: grid; /* For better alignment and future column possibilities */
+            gap: 15px;
         }
-
         .problem-list li, .benefits-list li {
-            background-color: var(--color-card);
-            padding: 25px 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed) ease;
-            display: flex;
-            align-items: flex-start;
-            border-left: 5px solid var(--color-accent);
+            background-color: var(--color-background-card);
+            padding: 20px 25px; /* More padding */
+            margin-bottom: 0; /* Handled by grid gap */
+            border-radius: 8px; /* Softer radius */
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--color-accent); /* Accent border */
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
         }
-
         .problem-list li:hover, .benefits-list li:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
         }
-
-        .list-icon {
-            font-size: 1.8rem;
-            margin-right: 20px;
-            color: var(--color-accent);
-            min-width: 40px;
-            text-align: center;
-        }
-
         .benefits-list li strong {
-            color: var(--color-primary-dark);
+            color: var(--color-primary-darker); /* Darker for emphasis */
             font-weight: 600;
+        }
+        .benefits-list li .icon-placeholder { /* For Unicode icons or future SVGs */
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: var(--color-accent);
         }
 
         /* Solution Section */
-        .solution-section {
-            background-color: var(--color-light);
-        }
-
-        .solution-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .solution-text {
-            flex: 1;
-            text-align: left;
-        }
-
-        .solution-image {
-            flex: 1;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            max-height: 500px;
-        }
-
-        .solution-image .image-placeholder {
-            min-height: 400px;
-            margin: 0;
-        }
-
-        .solution-text p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
+        .solution-section p {
+            max-width: 750px; /* Increased readability */
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
         }
         
         /* Social Proof Section */
-        .social-proof {
-            background-color: var(--color-card);
-        }
-
-        .testimonials-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            background-color: var(--color-light);
-            padding: 30px;
-            flex: 1 1 300px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
+        .social-proof .testimonial {
+            background-color: #faf6f0; /* Keeping unique bg for testimonials */
+            border-left: 5px solid var(--color-accent);
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 650px;
             text-align: left;
             font-style: italic;
-            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
         }
-
-        .testimonial::before {
-            content: """;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 4rem;
-            font-family: var(--font-heading);
-            color: var(--color-accent);
-            opacity: 0.2;
-            line-height: 1;
+        .social-proof .testimonial p {
+            margin-bottom: 10px;
+            font-size: 1.05em;
         }
-
-        .testimonial p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial span {
+        .social-proof .testimonial span {
             display: block;
             font-style: normal;
             font-weight: 600;
+            text-align: right;
             color: var(--color-primary);
-            font-size: 0.95rem;
+            font-size: 0.95em;
         }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 60px;
+        .social-proof .stats {
+            margin-top: 40px;
         }
-
-        .stat-item {
-            text-align: center;
-            min-width: 200px;
-        }
-
-        .stat-item .number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
+        .social-proof .stats p {
+            font-size: 1.15em;
             margin-bottom: 10px;
+            color: var(--color-text-dark);
+            font-weight: 600;
         }
-
-        .stat-item .label {
-            font-size: 1.1rem;
-            color: var(--color-text-light);
+        .social-proof .stats p .icon-placeholder {
+            margin-right: 8px;
+            color: var(--color-accent);
         }
 
         /* Offer Section */
         .offer-section {
-            background: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
+            background-color: var(--color-background-medium);
         }
-
-        .offer-section h2, 
         .offer-section p {
-            color: white;
+             max-width: 700px;
+             margin: 0 auto 30px auto;
+             font-size: 1.1em;
         }
-
-        .offer-section .cta-button {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-        }
-
-        .offer-section .cta-button:hover {
-            background-color: var(--color-accent-dark);
-        }
-
-        .offer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 50px auto;
-        }
-
-        .offer-card {
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all var(--transition-speed) ease;
-        }
-
-        .offer-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255,255,255,0.15);
-        }
-
-        .offer-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .offer-card .price {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin: 20px 0;
-            color: var(--color-accent);
-        }
-
-        .offer-card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .offer-card ul li {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .offer-card ul li::before {
-            content: "✓";
-            color: var(--color-accent);
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
         .secondary-links {
             margin-top: 30px;
-            font-size: 1rem;
+            font-size: 1em;
         }
-
         .secondary-links a {
             margin: 0 10px;
-            color: rgba(255,255,255,0.8);
-            font-weight: 500;
+            color: var(--color-accent);
+            font-weight: 600;
             text-decoration: none;
             transition: color var(--transition-speed) ease;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 2px;
         }
-
         .secondary-links a:hover {
-            color: white;
-            border-bottom-color: white;
+            color: var(--color-accent-hover);
+            text-decoration: underline;
         }
 
         /* FAQ Section */
-        .faq-section {
-            background-color: var(--color-card);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .faq-item {
-            margin-bottom: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed) ease;
+            margin-bottom: 15px;
+            text-align: left;
+            max-width: 750px; /* Wider for FAQ content */
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            overflow: hidden; /* To contain children with border-radius */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.07);
         }
-
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
-        }
-
         .faq-item h3 {
-            background-color: var(--color-light);
-            padding: 20px 25px;
+            background-color: #e0d8cf; /* Keeping distinct FAQ header bg */
+            padding: 15px 20px; /* More padding */
             margin: 0;
             cursor: pointer;
-            color: var(--color-primary-dark);
-            font-size: 1.2rem;
+            color: var(--color-primary-darker);
+            font-size: 1.1em;
             font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background-color var(--transition-speed) ease;
         }
-
         .faq-item h3:hover {
-            background-color: var(--color-highlight);
+            background-color: #d3c1ae;
         }
-
-        .faq-item h3::after {
+        .faq-item h3::after { /* Toggle icon */
             content: '+';
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-size: 1.5em;
+            font-weight: normal; /* Lighter than text for visual balance */
             color: var(--color-accent);
             transition: transform var(--transition-speed) ease;
         }
-
         .faq-item h3[aria-expanded="true"]::after {
             transform: rotate(45deg);
-            content: '−';
         }
-
-        .faq-item .faq-answer {
-            background-color: var(--color-card);
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height var(--transition-speed) ease, padding var(--transition-speed) ease;
-        }
-
-        .faq-item .faq-answer[aria-hidden="false"] {
-            padding: 25px;
-            max-height: 500px;
+        .faq-item .faq-answer { /* Class for answer panel */
+            background-color: #f7f2ec; /* Lighter than header */
+            padding: 20px;
+            margin: 0;
+            border-top: 1px solid #e0d8cf;
         }
 
         /* Footer */
         footer {
-            background-color: var(--color-primary-dark);
-            color: white;
-            padding: 60px 20px 30px;
-            position: relative;
+            background-color: var(--color-primary-darker);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 30px 20px; /* More padding */
+            font-size: 0.9em;
         }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
+        footer p {
+            margin-bottom: 15px;
         }
-
-        .footer-column {
-            flex: 1 1 250px;
+        .footer-social-links a {
+            color: var(--color-text-light);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em; /* For icon fonts if used */
+            transition: color var(--transition-speed) ease;
         }
-
-        .footer-column h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+        .footer-social-links a:hover {
             color: var(--color-accent);
         }
 
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 15px;
-        }
-
-        .footer-column ul li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color var(--transition-speed) ease;
-            display: inline-block;
-        }
-
-        .footer-column ul li a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-
-        /* Image Placeholders */
+        /* Image Placeholders - Replace with actual images */
         .image-placeholder {
             width: 100%;
-            min-height: 300px;
-            background: linear-gradient(45deg, #e6e1d5, #f2ede4);
+            min-height: 300px; /* Use min-height */
+            background-color: #e0e0e0; /* Lighter placeholder */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #a8a196;
+            color: #777; /* Darker placeholder text */
             font-style: italic;
-            font-size: 0.9rem;
-            border-radius: 12px;
-            border: 2px dashed #d3c9b9;
+            font-size: 0.9em;
+            margin-bottom: 30px; /* More space */
+            border-radius: 8px;
+            border: 2px dashed #ccc; /* Dashed border */
             padding: 20px;
-        }
-
-        /* Floating Order Button for Mobile */
-        .floating-order {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--color-accent);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 100;
-            text-decoration: none;
-            transition: all var(--transition-speed) ease;
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
-        .floating-order.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .floating-order:hover {
-            background-color: var(--color-accent-dark);
-            transform: scale(1.1) translateY(0);
+            box-sizing: border-box;
         }
 
         /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .solution-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .solution-text {
-                text-align: center;
-            }
-        }
-
         @media (max-width: 768px) {
-            header.hero {
-                padding: 80px 20px;
+            header.hero { padding: 40px 20px 60px; }
+            header.hero p { font-size: 1.1em; }
+            .cta-button { padding: 15px 25px; }
+            section { padding: 40px 15px; }
+            section h2 { margin-bottom: 30px; }
+            .problem-list, .benefits-list { max-width: 100%; } /* Full width on mobile */
+            .benefits-list {
+                /* On smaller screens, ensure benefits stack nicely */
+                grid-template-columns: 1fr; 
             }
-            
-            section {
-                padding: 70px 20px;
-            }
-            
-            .floating-candle {
-                display: none;
-            }
-            
-            .stats {
-                gap: 20px;
-            }
-            
-            .stat-item {
-                min-width: 150px;
-            }
+        }
+        @media (max-width: 480px) {
+            body { font-size: 15px; } /* Slightly smaller base for very small screens */
+            header.hero h1 { margin-bottom: 15px; }
+            header.hero p { font-size: 1em; margin-bottom: 30px;}
+            .cta-button { width: 90%; box-sizing: border-box; } /* Full width CTA on mobile */
+            .secondary-links a { display: block; margin: 10px 0; } /* Stack marketplace links */
         }
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 15px;
-            }
-            
-            header.hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .offer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .floating-order {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- 1. Hero Section -->
     <header class="hero">
-        <div class="floating-candle">🕯️</div>
-        <div class="floating-candle">🕯️</div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Ubah Rumah Jadi Oase Ketenangan Pribadi Anda dengan Sweet Candle.</h1>
-                <p>Lupakan stres dan penat harian. Sweet Candle hadir dengan lilin aromaterapi 100% alami yang aman, wangi tahan lama, dan diciptakan untuk momen self-care Anda yang berharga.</p>
-                <a href="#order" class="cta-button">Temukan Aroma Kedamaian Anda</a>
+            <div class="image-placeholder" role="img" aria-label="Suasana relaksasi dengan lilin Sweet Candle yang menyala temaram">
+                [Tempatkan Gambar Hero: Lilin Sweet Candle menyala dalam suasana rumah yang hangat dan menenangkan]
             </div>
+            <h1>Ubah Rumah Jadi Oase Ketenangan Pribadi Anda dengan Sweet Candle.</h1>
+            <p>Lupakan stres dan penat harian. Sweet Candle hadir dengan lilin aromaterapi 100% alami yang aman, wangi tahan lama, dan diciptakan untuk momen self-care Anda yang berharga.</p>
+            <a href="#order" class="cta-button">Temukan Aroma Kedamaian Anda</a>
         </div>
     </header>
 
@@ -722,125 +349,59 @@
         <!-- 2. Problem/Agitation Section -->
         <section class="problem-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Merasa Penat dan Sulit Rileks di Rumah Sendiri? Anda Tidak Sendirian.</h2>
-                    <p class="subheading">Kami memahami tantangan yang Anda hadapi dalam menciptakan ketenangan di rumah</p>
-                </div>
+                <h2>Merasa Penat dan Sulit Rileks di Rumah Sendiri? Anda Tidak Sendirian.</h2>
                 <ul class="problem-list">
-                    <li>
-                        <div class="list-icon">😟</div>
-                        <div>Rutinitas padat seringkali meninggalkan rasa stres dan kelelahan yang sulit hilang.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">❓</div>
-                        <div>Ingin suasana rumah yang lebih tenang dan nyaman, tapi bingung cara menciptakannya tanpa ribet?</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">💔</div>
-                        <div>Pernah kecewa dengan lilin aromaterapi mahal yang wanginya cepat pudar atau malah bikin pusing?</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">🔬</div>
-                        <div>Khawatir dengan kandungan parafin dan zat kimia berbahaya dalam lilin yang Anda gunakan?</div>
-                    </li>
+                    <li><span class="icon-placeholder">😟</span> Rutinitas padat seringkali meninggalkan rasa stres dan kelelahan yang sulit hilang.</li>
+                    <li><span class="icon-placeholder">❓</span> Ingin suasana rumah yang lebih tenang dan nyaman, tapi bingung cara menciptakannya tanpa ribet?</li>
+                    <li><span class="icon-placeholder">💔</span> Pernah kecewa dengan lilin aromaterapi mahal yang wanginya cepat pudar atau malah bikin pusing?</li>
+                    <li><span class="icon-placeholder">🔬</span> Khawatir dengan kandungan parafin dan zat kimia berbahaya dalam lilin yang Anda gunakan?</li>
                 </ul>
             </div>
         </section>
 
         <!-- 3. Solution Section -->
-        <section class="solution-section">
+        <section class="solution-section" style="background-color: #f7f2ec;"> <!-- Lighter distinct bg -->
             <div class="container">
-                <div class="solution-content">
-                    <div class="solution-text">
-                        <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-                            <h2>Kini Hadir Sweet Candle: Solusi Aromaterapi Premium, Alami, dan Lokal Kebanggaan.</h2>
-                            <p class="subheading" style="text-align: left;">Diciptakan untuk menghadirkan ketenangan sejati di setiap momen Anda</p>
-                        </div>
-                        <p>Sweet Candle diciptakan untuk Anda yang mendambakan ketenangan dan kehangatan sejati. Kami percaya, momen relaksasi berkualitas tidak harus mahal atau berisiko. Setiap lilin kami adalah perpaduan seni, kualitas bahan terbaik, dan cinta untuk menghadirkan pengalaman aromaterapi yang tak terlupakan di rumah Anda.</p>
-                    </div>
-                    <div class="solution-image">
-                        <div class="image-placeholder" role="img" aria-label="Detail produk Sweet Candle menampilkan bahan alami seperti soy wax dan essential oil">
-                            [Gambar Detail: Close-up lilin Sweet Candle atau komposisi bahan alami yang digunakan]
-                        </div>
-                    </div>
+                <div class="image-placeholder" role="img" aria-label="Detail produk Sweet Candle menampilkan bahan alami seperti soy wax dan essential oil">
+                    [Gambar Detail: Close-up lilin Sweet Candle atau komposisi bahan alami yang digunakan]
                 </div>
+                <h2>Kini Hadir Sweet Candle: Solusi Aromaterapi Premium, Alami, dan Lokal Kebanggaan.</h2>
+                <p>Sweet Candle diciptakan untuk Anda yang mendambakan ketenangan dan kehangatan sejati. Kami percaya, momen relaksasi berkualitas tidak harus mahal atau berisiko. Setiap lilin kami adalah perpaduan seni, kualitas bahan terbaik, dan cinta untuk menghadirkan pengalaman aromaterapi yang tak terlupakan di rumah Anda.</p>
             </div>
         </section>
 
         <!-- 4. Benefits & Features Section -->
         <section class="benefits-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Mengapa Sweet Candle Akan Menjadi Favorit Baru Anda?</h2>
-                    <p class="subheading">Kelebihan yang membuat pengalaman relaksasi Anda lebih sempurna</p>
-                </div>
+                <h2>Mengapa Sweet Candle Akan Menjadi Favorit Baru Anda?</h2>
                 <ul class="benefits-list">
-                    <li>
-                        <div class="list-icon">🌿</div>
-                        <div><strong>100% Alami & Aman:</strong> Dibuat dari <em>soy wax</em> murni dan <em>pure essential oils</em>, bebas parafin dan ftalat. Aman untuk Anda, keluarga, dan lingkungan.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">✨</div>
-                        <div><strong>Aroma Eksklusif Tahan Lama:</strong> Pilihan seperti <em>Lavender Woods</em>, <em>Vanilla Bergamot</em>, <em>Citrus Bloom</em>. Wanginya konsisten mengisi ruangan tanpa berlebihan.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">🏡</div>
-                        <div><strong>Ciptakan Suasana Idaman:</strong> Ubah mood ruangan menjadi lebih rileks untuk istirahat, romantis untuk momen spesial, atau fokus untuk bekerja.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">♻️</div>
-                        <div><strong>Wadah Estetik & Reusable:</strong> Desain minimalis elegan dari kaca tebal yang cantik. Setelah lilin habis, wadah bisa digunakan kembali untuk pernak-pernik atau tanaman kecil.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">🎁</div>
-                        <div><strong>Hadiah Sempurna & Personal:</strong> Kemasan premium yang menawan. Tersedia opsi <em>custom label</em> atau kartu ucapan untuk hadiah yang lebih berkesan.</div>
-                    </li>
-                    <li>
-                        <div class="list-icon">🇮🇩</div>
-                        <div><strong>Dukung Produk Lokal Berkualitas:</strong> Bangga menjadi bagian dari brand lokal yang mengedepankan kualitas dan bahan-bahan terbaik dari alam Indonesia.</div>
-                    </li>
+                    <li><span class="icon-placeholder">🌿</span> <strong>100% Alami & Aman:</strong> Dibuat dari <em>soy wax</em> murni dan <em>pure essential oils</em>, bebas parafin dan ftalat. Aman untuk Anda, keluarga, dan lingkungan.</li>
+                    <li><span class="icon-placeholder">✨</span> <strong>Aroma Eksklusif Tahan Lama:</strong> Pilihan seperti <em>Lavender Woods</em>, <em>Vanilla Bergamot</em>, <em>Citrus Bloom</em>. Wanginya konsisten mengisi ruangan tanpa berlebihan.</li>
+                    <li><span class="icon-placeholder">🏡</span> <strong>Ciptakan Suasana Idaman:</strong> Ubah mood ruangan menjadi lebih rileks untuk istirahat, romantis untuk momen spesial, atau fokus untuk bekerja.</li>
+                    <li><span class="icon-placeholder">♻️</span> <strong>Wadah Estetik & Reusable:</strong> Desain minimalis elegan dari kaca tebal yang cantik. Setelah lilin habis, wadah bisa digunakan kembali untuk pernak-pernik atau tanaman kecil.</li>
+                    <li><span class="icon-placeholder">🎁</span> <strong>Hadiah Sempurna & Personal:</strong> Kemasan premium yang menawan. Tersedia opsi <em>custom label</em> atau kartu ucapan untuk hadiah yang lebih berkesan.</li>
+                    <li><span class="icon-placeholder">🇮🇩</span> <strong>Dukung Produk Lokal Berkualitas:</strong> Bangga menjadi bagian dari brand lokal yang mengedepankan kualitas dan bahan-bahan terbaik dari alam Indonesia.</li>
                 </ul>
             </div>
         </section>
 
         <!-- 5. Social Proof Section -->
-        <section class="social-proof">
+        <section class="social-proof" style="background-color: #f7f2ec;"> <!-- Consistent with solution bg -->
             <div class="container">
-                <div class="section-header">
-                    <h2>Lebih dari 20.000+ Momen Ketenangan Telah Tercipta Bersama Sweet Candle!</h2>
-                    <p class="subheading">Apa kata pelanggan kami tentang pengalaman mereka</p>
+                <h2>Lebih dari 20.000+ Momen Ketenangan Telah Tercipta Bersama Sweet Candle!</h2>
+                <div class="testimonial">
+                    <p>"Akhirnya nemu lilin lokal yang wanginya mewah dan tahan lama! Rumah jadi auto nyaman banget setelah seharian kerja. Varian Vanilla Bergamot favoritku. Repeat order pasti!"</p>
+                    <span>- Andini P., Jakarta Selatan</span>
                 </div>
-                <div class="testimonials-container">
-                    <div class="testimonial">
-                        <p>"Akhirnya nemu lilin lokal yang wanginya mewah dan tahan lama! Rumah jadi auto nyaman banget setelah seharian kerja. Varian Vanilla Bergamot favoritku. Repeat order pasti!"</p>
-                        <span>- Andini P., Jakarta Selatan</span>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Suka banget sama aroma Lavender Woods-nya, beneran bikin tidur lebih nyenyak dan berkualitas. Packaging-nya juga cantik banget, estetik buat pajangan. Worth every penny!"</p>
-                        <span>- Rina K., Bandung</span>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Sebagai penderita alergi, saya sangat menghargai produk yang benar-benar alami seperti Sweet Candle. Tidak memicu alergi sama sekali dan wanginya sangat menenangkan."</p>
-                        <span>- Budi S., Surabaya</span>
-                    </div>
+                <div class="testimonial">
+                    <p>"Suka banget sama aroma Lavender Woods-nya, beneran bikin tidur lebih nyenyak dan berkualitas. Packaging-nya juga cantik banget, estetik buat pajangan. Worth every penny!"</p>
+                    <span>- Rina K., Bandung</span>
                 </div>
+                <!-- Add more testimonials or a slider if many -->
                 <div class="stats">
-                    <div class="stat-item">
-                        <div class="number">20.000+</div>
-                        <div class="label">Lilin Terjual</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">97%</div>
-                        <div class="label">Kepuasan Pelanggan</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">2x</div>
-                        <div class="label">Wangi Lebih Tahan Lama</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">100%</div>
-                        <div class="label">Bahan Alami</div>
-                    </div>
+                    <p><span class="icon-placeholder">⭐</span> Terjual lebih dari 20.000 lilin sejak diluncurkan pada tahun 2020.</p>
+                    <p><span class="icon-placeholder">💖</span> Dipercaya oleh ribuan pelanggan setia & direkomendasikan oleh influencer gaya hidup.</p>
+                    <p><span class="icon-placeholder">🔁</span> Mayoritas pelanggan melakukan pembelian ulang dalam 2 bulan pertama.</p>
                 </div>
             </div>
         </section>
@@ -848,51 +409,12 @@
         <!-- 6. Offer & Call to Action Section -->
         <section id="order" class="offer-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Siap Menghadirkan Keajaiban Aroma Sweet Candle di Rumah Anda?</h2>
-                    <p class="subheading">Pilih paket yang sesuai dengan kebutuhan relaksasi Anda</p>
+                <h2>Siap Menghadirkan Keajaiban Aroma Sweet Candle di Rumah Anda?</h2>
+                <div class="image-placeholder" role="img" aria-label="Koleksi produk Sweet Candle dengan kemasan hadiah">
+                    [Gambar Produk Unggulan: Koleksi lilin Sweet Candle atau contoh kemasan hadiah yang menarik]
                 </div>
-                <div class="offer-grid">
-                    <div class="offer-card">
-                        <h3>Travel Jar</h3>
-                        <p>Perfect for small spaces and on-the-go relaxation</p>
-                        <div class="price">Rp 85.000</div>
-                        <ul>
-                            <li>Ukuran 100gr (15-20 jam bakar)</li>
-                            <li>Pilihan 3 aroma eksklusif</li>
-                            <li>Kemasan premium</li>
-                            <li>Gratis bubble wrap</li>
-                        </ul>
-                        <a href="#" class="cta-button">Pilih Paket Ini</a>
-                    </div>
-                    <div class="offer-card">
-                        <h3>Regular Size</h3>
-                        <p>Best value for your home sanctuary</p>
-                        <div class="price">Rp 150.000</div>
-                        <ul>
-                            <li>Ukuran 200gr (35-40 jam bakar)</li>
-                            <li>Pilihan 5 aroma eksklusif</li>
-                            <li>Kemasan premium</li>
-                            <li>Gratis bubble wrap</li>
-                            <li>Bonus small diffuser</li>
-                        </ul>
-                        <a href="#" class="cta-button">Pilih Paket Ini</a>
-                    </div>
-                    <div class="offer-card">
-                        <h3>Wellness Bundle</h3>
-                        <p>Complete relaxation experience</p>
-                        <div class="price">Rp 275.000</div>
-                        <ul>
-                            <li>2 Lilin Regular Size</li>
-                            <li>1 Lilin Travel Jar</li>
-                            <li>Pilihan 5 aroma eksklusif</li>
-                            <li>Kemasan hadiah mewah</li>
-                            <li>Bonus diffuser premium</li>
-                            <li>Gratis pengiriman</li>
-                        </ul>
-                        <a href="#" class="cta-button">Pilih Paket Ini</a>
-                    </div>
-                </div>
+                <p>Pilih aroma favorit Anda dari koleksi eksklusif kami. Tersedia dalam ukuran Travel Jar yang praktis dibawa bepergian, atau ukuran Reguler untuk keharuman yang lebih tahan lama di rumah. Kami menjamin pengiriman cepat dan kemasan yang aman sampai ke tangan Anda.</p>
+                <a href="[LINK_SHOPEE_ANDA_UTAMA]" target="_blank" class="cta-button" style="margin-bottom: 25px;">Pesan Sweet Candle Anda Sekarang!</a>
                 <div class="secondary-links">
                     Atau beli melalui platform favorit Anda:
                     <a href="[LINK_SHOPEE_ANDA]" target="_blank" title="Beli Sweet Candle di Shopee">Shopee</a> |
@@ -905,34 +427,29 @@
         <!-- 7. FAQ Section -->
         <section class="faq-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Pertanyaan yang Sering Diajukan</h2>
-                    <p class="subheading">Temukan jawaban atas pertanyaan Anda tentang Sweet Candle</p>
+                <h2>Pertanyaan yang Sering Diajukan (FAQ)</h2>
+                <div class="faq-item">
+                    <h3 id="faq1-q" aria-controls="faq1-a" aria-expanded="false">Apakah bahannya benar-benar aman untuk pernapasan dan hewan peliharaan?</h3>
+                    <div class="faq-answer" id="faq1-a" role="region" aria-labelledby="faq1-q" style="display: none;">
+                        <p>Ya, Sweet Candle menggunakan 100% <em>natural soy wax</em> dan <em>pure essential oils</em> berkualitas tinggi. Lilin kami bebas dari parafin, ftalat, dan bahan kimia sintetis berbahaya lainnya, sehingga aman untuk dihirup dan umumnya aman untuk hewan peliharaan (namun, selalu awasi hewan Anda di sekitar lilin menyala dan pastikan ventilasi baik).</p>
+                    </div>
                 </div>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <h3 id="faq1-q" aria-controls="faq1-a" aria-expanded="false">Apakah bahannya benar-benar aman untuk pernapasan dan hewan peliharaan?</h3>
-                        <div class="faq-answer" id="faq1-a" role="region" aria-labelledby="faq1-q" aria-hidden="true">
-                            <p>Ya, Sweet Candle menggunakan 100% <em>natural soy wax</em> dan <em>pure essential oils</em> berkualitas tinggi. Lilin kami bebas dari parafin, ftalat, dan bahan kimia sintetis berbahaya lainnya, sehingga aman untuk dihirup dan umumnya aman untuk hewan peliharaan (namun, selalu awasi hewan Anda di sekitar lilin menyala dan pastikan ventilasi baik).</p>
-                        </div>
+                <div class="faq-item">
+                    <h3 id="faq2-q" aria-controls="faq2-a" aria-expanded="false">Berapa lama lilin bisa menyala dan bagaimana cara memaksimalkannya?</h3>
+                    <div class="faq-answer" id="faq2-a" role="region" aria-labelledby="faq2-q" style="display: none;">
+                        <p>Ukuran Travel Jar (sekitar 100gr) memiliki estimasi waktu bakar 15-20 jam, sedangkan ukuran Reguler (sekitar 200gr) bisa mencapai 35-40 jam. Untuk hasil terbaik: bakar lilin minimal 1-2 jam pada penggunaan pertama hingga seluruh permukaan mencair, potong sumbu hingga 0.5cm sebelum setiap penggunaan, dan hindari membakar lebih dari 4 jam berturut-turut.</p>
                     </div>
-                    <div class="faq-item">
-                        <h3 id="faq2-q" aria-controls="faq2-a" aria-expanded="false">Berapa lama lilin bisa menyala dan bagaimana cara memaksimalkannya?</h3>
-                        <div class="faq-answer" id="faq2-a" role="region" aria-labelledby="faq2-q" aria-hidden="true">
-                            <p>Ukuran Travel Jar (sekitar 100gr) memiliki estimasi waktu bakar 15-20 jam, sedangkan ukuran Reguler (sekitar 200gr) bisa mencapai 35-40 jam. Untuk hasil terbaik: bakar lilin minimal 1-2 jam pada penggunaan pertama hingga seluruh permukaan mencair, potong sumbu hingga 0.5cm sebelum setiap penggunaan, dan hindari membakar lebih dari 4 jam berturut-turut.</p>
-                        </div>
+                </div>
+                <div class="faq-item">
+                    <h3 id="faq3-q" aria-controls="faq3-a" aria-expanded="false">Bagaimana cara memesan lilin dengan custom label untuk acara spesial?</h3>
+                    <div class="faq-answer" id="faq3-a" role="region" aria-labelledby="faq3-q" style="display: none;">
+                        <p>Untuk pemesanan <em>custom label</em> (misalnya untuk souvenir pernikahan, hadiah perusahaan, dll.), silakan hubungi kami langsung melalui DM Instagram @SweetCandleID atau email ke [ALAMAT_EMAIL_ANDA]. Tim kami akan dengan senang hati membantu Anda mendiskusikan desain, jumlah minimum order, dan detail lainnya.</p>
                     </div>
-                    <div class="faq-item">
-                        <h3 id="faq3-q" aria-controls="faq3-a" aria-expanded="false">Bagaimana cara memesan lilin dengan custom label untuk acara spesial?</h3>
-                        <div class="faq-answer" id="faq3-a" role="region" aria-labelledby="faq3-q" aria-hidden="true">
-                            <p>Untuk pemesanan <em>custom label</em> (misalnya untuk souvenir pernikahan, hadiah perusahaan, dll.), silakan hubungi kami langsung melalui DM Instagram @SweetCandleID atau email ke [ALAMAT_EMAIL_ANDA]. Tim kami akan dengan senang hati membantu Anda mendiskusikan desain, jumlah minimum order, dan detail lainnya.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <h3 id="faq4-q" aria-controls="faq4-a" aria-expanded="false">Area pengiriman mana saja yang dijangkau dan berapa lama estimasi pengiriman?</h3>
-                        <div class="faq-answer" id="faq4-a" role="region" aria-labelledby="faq4-q" aria-hidden="true">
-                            <p>Kami melayani pengiriman ke seluruh Indonesia. Estimasi waktu pengiriman tergantung pada lokasi Anda dan layanan kurir yang dipilih, umumnya berkisar antara 2-7 hari kerja. Kami selalu berusaha memproses pesanan secepat mungkin dan memastikan kemasan aman.</p>
-                        </div>
+                </div>
+                 <div class="faq-item">
+                    <h3 id="faq4-q" aria-controls="faq4-a" aria-expanded="false">Area pengiriman mana saja yang dijangkau dan berapa lama estimasi pengiriman?</h3>
+                    <div class="faq-answer" id="faq4-a" role="region" aria-labelledby="faq4-q" style="display: none;">
+                        <p>Kami melayani pengiriman ke seluruh Indonesia. Estimasi waktu pengiriman tergantung pada lokasi Anda dan layanan kurir yang dipilih, umumnya berkisar antara 2-7 hari kerja. Kami selalu berusaha memproses pesanan secepat mungkin dan memastikan kemasan aman.</p>
                     </div>
                 </div>
             </div>
@@ -940,93 +457,40 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Sweet Candle</h3>
-                <p style="color: rgba(255,255,255,0.8); max-width: 300px; line-height: 1.6;">Menghadirkan ketenangan dan kehangatan melalui lilin aromaterapi premium dari bahan alami terbaik Indonesia.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Produk</h3>
-                <ul>
-                    <li><a href="#">Lilin Aromaterapi</a></li>
-                    <li><a href="#">Paket Hadiah</a></li>
-                    <li><a href="#">Aksesoris</a></li>
-                    <li><a href="#">Aroma Eksklusif</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Bantuan</h3>
-                <ul>
-                    <li><a href="#">Cara Pemesanan</a></li>
-                    <li><a href="#">Pengiriman</a></li>
-                    <li><a href="#">Pembayaran</a></li>
-                    <li><a href="#">Kebijakan Pengembalian</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Hubungi Kami</h3>
-                <ul>
-                    <li><a href="mailto:hello@sweetcandle.id">hello@sweetcandle.id</a></li>
-                    <li><a href="tel:+628123456789">+62 812 3456 789</a></li>
-                    <li><a href="https://instagram.com/SweetCandleID" target="_blank">@SweetCandleID</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
+        <div class="container">
             <p>© <span id="currentYear"></span> Sweet Candle. All Rights Reserved. Crafted with Love in Indonesia.</p>
+            <div class="footer-social-links">
+                <!-- Replace # with actual social media links. Consider using SVG icons here for best quality. -->
+                <!-- Example: <a href="#" aria-label="Sweet Candle on Instagram"><i class="fab fa-instagram"></i></a> -->
+                <a href="https://instagram.com/SweetCandleID" target="_blank" aria-label="Sweet Candle di Instagram">Instagram</a> | 
+                <a href="[LINK_FACEBOOK_ANDA]" target="_blank" aria-label="Sweet Candle di Facebook">Facebook</a> |
+                <a href="[LINK_TIKTOK_ANDA]" target="_blank" aria-label="Sweet Candle di TikTok">TikTok</a>
+            </div>
         </div>
     </footer>
-
-    <!-- Floating Order Button -->
-    <a href="#order" class="floating-order" aria-label="Pesan Sekarang">🛒</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Dynamic Year in Footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-            // FAQ Toggle Functionality
+            // FAQ Toggle Functionality with ARIA
             const faqQuestions = document.querySelectorAll('.faq-item h3');
             faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
-                    
-                    // Close all other FAQs
-                    faqQuestions.forEach(q => {
-                        if (q !== question) {
-                            q.setAttribute('aria-expanded', 'false');
-                            q.nextElementSibling.setAttribute('aria-hidden', 'true');
-                        }
-                    });
-                    
-                    // Toggle current FAQ
-                    question.setAttribute('aria-expanded', !isExpanded);
-                    answer.setAttribute('aria-hidden', isExpanded);
-                });
-            });
-
-            // Floating order button visibility
-            const floatingOrderBtn = document.querySelector('.floating-order');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
-                    floatingOrderBtn.classList.add('visible');
-                } else {
-                    floatingOrderBtn.classList.remove('visible');
+                const answer = question.nextElementSibling;
+                // Ensure answer panel has an ID and is controlled by the question
+                if (!answer.id) {
+                    answer.id = question.id.replace('-q', '-a');
                 }
-            });
+                question.setAttribute('aria-controls', answer.id);
 
-            // Add smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                question.addEventListener('click', () => {
+                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                    question.setAttribute('aria-expanded', !isExpanded);
+                    answer.style.display = isExpanded ? 'none' : 'block';
+                    if (!isExpanded) {
+                        // Optional: scroll to opened FAQ if it's long
+                        // answer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     }
                 });
             });
