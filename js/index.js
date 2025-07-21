@@ -120,17 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   const rotateY = (deltaX / (rect.width / 2)) * maxTilt;
                   const rotateX = (-deltaY / (rect.height / 2)) * maxTilt; // Invert Y rotation
 
-                  // Apply smooth tilt - requestAnimationFrame helps performance
-                  requestAnimationFrame(() => {
-                      mainContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                  });
+                  // Apply smooth tilt by updating CSS variables
+                  mainContainer.style.setProperty('--rotateX', `${rotateX}deg`);
+                  mainContainer.style.setProperty('--rotateY', `${rotateY}deg`);
               });
               
                body.addEventListener('mouseleave', () => {
                    // Reset tilt when mouse leaves body
-                   requestAnimationFrame(() => {
-                       mainContainer.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-                   });
+                   mainContainer.style.setProperty('--rotateX', '0deg');
+                   mainContainer.style.setProperty('--rotateY', '0deg');
                });
           }
      }
