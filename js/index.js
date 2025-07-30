@@ -108,24 +108,35 @@ document.addEventListener('DOMContentLoaded', () => {
          
          // Check for non-touch device before adding tilt effect
          if (!('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0)) {
-              body.addEventListener('mousemove', (e) => {
-                  const rect = mainContainer.getBoundingClientRect();
-                  // Calculate position relative to container center (adjust if container isn't centered perfectly)
-                  const centerX = rect.left + rect.width / 2; 
-                  const centerY = rect.top + rect.height / 2; 
-                  
-                  const deltaX = e.clientX - centerX;
-                  const deltaY = e.clientY - centerY;
-                  
-                  const rotateY = (deltaX / (rect.width / 2)) * maxTilt;
-                  const rotateX = (-deltaY / (rect.height / 2)) * maxTilt; // Invert Y rotation
+              let frameId = null; // To store the requestAnimationFrame ID
 
-                  // Apply smooth tilt by updating CSS variables
-                  mainContainer.style.setProperty('--rotateX', `${rotateX}deg`);
-                  mainContainer.style.setProperty('--rotateY', `${rotateY}deg`);
+              body.addEventListener('mousemove', (e) => {
+                  if (frameId) {
+                      cancelAnimationFrame(frameId);
+                  }
+
+                  frameId = requestAnimationFrame(() => {
+                      const rect = mainContainer.getBoundingClientRect();
+                      const centerX = rect.left + rect.width / 2; 
+                      const centerY = rect.top + rect.height / 2; 
+                      
+                      const deltaX = e.clientX - centerX;
+                      const deltaY = e.clientY - centerY;
+                      
+                      const rotateY = (deltaX / (rect.width / 2)) * maxTilt;
+                      const rotateX = (-deltaY / (rect.height / 2)) * maxTilt; // Invert Y rotation
+
+                      // Apply smooth tilt by updating CSS variables
+                      mainContainer.style.setProperty('--rotateX', `${rotateX}deg`);
+                      mainContainer.style.setProperty('--rotateY', `${rotateY}deg`);
+                  });
               });
               
                body.addEventListener('mouseleave', () => {
+                   if (frameId) {
+                       cancelAnimationFrame(frameId);
+                       frameId = null;
+                   }
                    // Reset tilt when mouse leaves body
                    mainContainer.style.setProperty('--rotateX', '0deg');
                    mainContainer.style.setProperty('--rotateY', '0deg');

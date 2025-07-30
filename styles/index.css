@@ -88,6 +88,28 @@ body[data-cursor="click"] .cursor-outline {
     transition-duration: 0.1s;
 }
 
+/* --- ACCESSIBILITY --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Add a clear focus outline for keyboard navigators */
+a:focus-visible,
+button:focus-visible,
+.interactive-card:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+    border-radius: 5px; /* Optional: makes the outline match rounded corners */
+}
+
 /* --- MAIN CONTAINER --- */
 .container {
     max-width: 850px;
@@ -101,8 +123,8 @@ body[data-cursor="click"] .cursor-outline {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     position: relative;
     transform-style: preserve-3d; /* Enable 3D transforms for children */
-    /* Wobble slightly based on mouse */
     transition: transform 0.1s linear;
+    /* Set transform using CSS variables for JS to update */
     transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
 }
 
